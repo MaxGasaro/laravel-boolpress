@@ -3565,7 +3565,7 @@ var render = function () {
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "card-text" }, [
-                _vm._v(_vm._s(post.content.substring(0, 30))),
+                _vm._v(_vm._s(post.content.substring(0, 60))),
               ]),
               _vm._v(" "),
               _c(

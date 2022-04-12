@@ -7,7 +7,7 @@
 
                     <div class="card-body">
                         <h5 class="card-title">{{post.title}}</h5>
-                        <p class="card-text">{{post.content.substring(0,30)}}</p>
+                        <p class="card-text">{{post.content.substring(0,60)}}</p>
                         <a href="#" class="btn btn-primary">Vedi Articolo Completo</a>
                     </div>
                 </div>
