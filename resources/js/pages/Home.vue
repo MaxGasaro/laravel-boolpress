@@ -1,5 +1,7 @@
 <template>
-  <h1>Benvenuto nel nostro blog!</h1>
+  <div class="container">
+    <h1>Benvenuto nel nostro blog!</h1>
+  </div>
 </template>
 
 <script>

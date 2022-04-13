@@ -13,7 +13,7 @@
                 </div>
             </div>
         </div>
-        <div clas="row">
+        <div class="my-4">
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                     <li class="page-item" :class="(currentPage == 1)?'disabled':''"><a class="page-link" @click="getPosts(currentPage - 1)" href="#">Previous</a></li>

@@ -1912,6 +1912,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Footer'
 });
@@ -1927,10 +1929,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
 //
 //
 //
@@ -2039,6 +2037,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -3297,7 +3297,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("Io sono il footer")])
+  return _c("div", { staticClass: "container-fluid" })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -3453,7 +3453,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
+    return _c("div", { staticClass: "container" }, [
       _c("h1", [_vm._v("Chi Siamo")]),
       _vm._v(" "),
       _c("p", [
@@ -3492,7 +3492,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
+    return _c("div", { staticClass: "container" }, [
       _c("h1", [_vm._v("Per contattarci usa i nostri recapiti:")]),
       _vm._v(" "),
       _c("p", [
@@ -3524,9 +3524,18 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Benvenuto nel nostro blog!")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("h1", [_vm._v("Benvenuto nel nostro blog!")]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -3580,7 +3589,7 @@ var render = function () {
       0
     ),
     _vm._v(" "),
-    _c("div", { attrs: { clas: "row" } }, [
+    _c("div", { staticClass: "my-4" }, [
       _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
         _c("ul", { staticClass: "pagination" }, [
           _c(

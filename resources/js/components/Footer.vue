@@ -1,5 +1,7 @@
 <template>
-  <div>Io sono il footer</div>
+  <div class="container-fluid">
+    
+  </div>
 </template>
 
 <script>
