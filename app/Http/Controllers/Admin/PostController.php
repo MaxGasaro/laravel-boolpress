@@ -100,7 +100,7 @@ class PostController extends Controller
     {
 
         $now = Carbon::now();
-        $postDateTime = Carbon::create($post->create_at);
+        $postDateTime = Carbon::create($post->created_at);
 
         $diffInDays = $now->diffInDays($postDateTime);
 
