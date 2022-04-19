@@ -5,10 +5,20 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <h1>Crea un nuovo post</h1>
-                <form method="POST" action={{route('admin.posts.update', $post->id)}}>
+                <form method="POST" action={{route('admin.posts.update', $post->id)}} enctype="multipart/form-data">
 
                     @csrf
                     @method('PUT')
+
+                    @if ($post->cover)
+                        <p>Immagine attuale</p>
+                        <img class="img-thumbnail" src="{{asset('storage/' . $post->cover)}}" alt="{{$post->title}}">
+                    @endif
+
+                    <div class="form-group">
+                        <label for="image">Carica nuova immagine di copertina</label>
+                        <input class="form-control" type="file" name="image" id="image">
+                    </div>
 
                     <div class="form-group">
                       <label for="category_id">Categoria</label>

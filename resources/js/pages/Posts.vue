@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <h1>Elenco dei post</h1>
         <div class="row">
             <div class="col-6" v-for="post in posts" :key="post.id">
                 <div class="card">
@@ -7,8 +8,9 @@
 
                     <div class="card-body">
                         <h5 class="card-title">{{post.title}}</h5>
+                        <h3 class="card-text">{{post.category?post.category.name:'&nbsp;'}}</h3>
                         <p class="card-text">{{post.content.substring(0,60)}}</p>
-                        <a href="#" class="btn btn-primary">Vedi Articolo Completo</a>
+                        <router-link :to="{name: 'single-post', params: {slug: post.slug}}" class="btn btn-primary">Vedi Articolo Completo</router-link>
                     </div>
                 </div>
             </div>
@@ -50,7 +52,7 @@
             }
         },
         created() {
-            this.getPosts()
+            this.getPosts(1)
         }
     }
 </script>
