@@ -7,6 +7,7 @@
                     <div class="card-header font-weight-bold">{{post.title}}</div>
 
                     <div class="card-body">
+                        <img class="img-fluid" :src="post.cover" :alt="post.title">
                         <h5 class="card-title">{{post.title}}</h5>
                         <h3 class="card-text">{{post.category?post.category.name:'&nbsp;'}}</h3>
                         <p class="card-text">{{post.content.substring(0,60)}}</p>

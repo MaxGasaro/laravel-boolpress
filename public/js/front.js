@@ -2075,7 +2075,7 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         _this.sendingProgress = false;
 
-        if (response.data.error) {
+        if (response.data.errors) {
           _this.errors = response.data.errors;
           _this.success = false;
         } else {
@@ -2085,8 +2085,6 @@ __webpack_require__.r(__webpack_exports__);
           _this.message = '';
           _this.errors = {};
         }
-
-        console.log(response);
       })["catch"](function (err) {//
       });
     }
@@ -2147,6 +2145,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -2256,11 +2255,12 @@ __webpack_require__.r(__webpack_exports__);
           });
         } else {
           _this.post = response.data.result;
+          console.log(_this.post);
         }
       });
     }
   },
-  mounted: function mounted() {
+  created: function created() {
     this.getPost();
   }
 });
@@ -3654,12 +3654,7 @@ var render = function () {
               ],
               staticClass: "form-control",
               class: { "is-invalid": _vm.errors.name },
-              attrs: {
-                type: "text",
-                id: "name",
-                name: "name",
-                placeholder: "name@example.com",
-              },
+              attrs: { type: "text", id: "name", name: "name" },
               domProps: { value: _vm.name },
               on: {
                 input: function ($event) {
@@ -3701,12 +3696,7 @@ var render = function () {
               ],
               staticClass: "form-control",
               class: { "is-invalid": _vm.errors.email },
-              attrs: {
-                type: "email",
-                id: "email",
-                name: "email",
-                placeholder: "name@example.com",
-              },
+              attrs: { type: "email", id: "email", name: "email" },
               domProps: { value: _vm.email },
               on: {
                 input: function ($event) {
@@ -3890,6 +3880,11 @@ var render = function () {
               "div",
               { staticClass: "card-body" },
               [
+                _c("img", {
+                  staticClass: "img-fluid",
+                  attrs: { src: post.cover, alt: post.title },
+                }),
+                _vm._v(" "),
                 _c("h5", { staticClass: "card-title" }, [
                   _vm._v(_vm._s(post.title)),
                 ]),
@@ -4005,7 +4000,7 @@ var render = function () {
               _vm._v(" "),
               _c("img", {
                 staticClass: "img-fluid",
-                attrs: { src: _vm.post.cover, alt: "title" },
+                attrs: { src: _vm.post.cover, alt: _vm.post.title },
               }),
               _vm._v(" "),
               _vm.post.category

@@ -9,14 +9,14 @@
 
       <div class="form-group">
         <label for="name">What's your name?</label>
-        <input type="text" class="form-control" id="name" :class="{'is-invalid':errors.name}" name="name" placeholder="name@example.com" v-model="name">
+        <input type="text" class="form-control" id="name" :class="{'is-invalid':errors.name}" name="name" v-model="name">
         <p v-for="(error, index) in errors.name" :key="'error_name'+index" class="invalid-feedback">
           {{error}}
         </p>
       </div>
       <div class="form-group">
         <label for="email">Inserisci la tua email</label>
-        <input type="email" class="form-control" :class="{'is-invalid':errors.email}" id="email" name="email" placeholder="name@example.com" v-model="email">
+        <input type="email" class="form-control" :class="{'is-invalid':errors.email}" id="email" name="email" v-model="email">
         <p v-for="(error, index) in errors.email" :key="'error_email'+index" class="invalid-feedback">
           {{error}}
         </p>        
@@ -58,7 +58,7 @@ export default {
         'message': this.message
       }).then((response) => {
         this.sendingProgress = false;
-        if (response.data.error) {
+        if (response.data.errors) {
           this.errors = response.data.errors;
           this.success = false;
         } else {
@@ -68,7 +68,6 @@ export default {
           this.message = '';
           this.errors = {};
         }
-        console.log(response);
       }).catch((err) => {
         //
       });
